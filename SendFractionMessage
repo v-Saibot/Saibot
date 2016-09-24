@@ -1,0 +1,28 @@
+stock SendFractionMessage(color, string[], ...)
+{
+ 	for(new i = GetPlayerPoolSize()+1; i-- != -1;)
+ 	{
+ 	    for(new member = numargs(); member-- != 0;)
+ 	    {
+	 	    if /*переменная[i][перечесление](проверка на фракцию)*/ == getarg(member) *then
+			{
+			    SendClientMessage(i, color, string);
+			}
+		}
+	}
+	return 1;
+}
+//
+Использувание:
+SendFractionMessage(0x33CCFFFF/*Цвет сообщения*/, "Текст", 1, 2, 3/*идентификатор фракций, которым выводим сообщение*/);
+
+CMD:fraction(playerid, params[])
+{
+	new fmt_str[144],
+		player_name[MAX_PLAYER_NAME];
+		
+	GetPlayerName(playerid, player_name, sizeof(player_name));
+	
+	format(fmt_str, sizeof(fmt_str), "Написал: %s, %s", sendername, params);
+	return SendFractionMessage(0x33CCFFFF, fmt_str, 1,2,3);
+}
