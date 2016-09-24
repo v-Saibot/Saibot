@@ -14,7 +14,7 @@ stock SendFractionMessage(color, string[], ...)
 }
 //
 Использувание:
-SendFractionMessage(0x33CCFFFF/*Цвет сообщения*/, "Текст", 1, 2, 3/*идентификатор фракций, которым выводим сообщение*/);
+SendFractionMessage(0x33CCFFFF/*Цвет сообщения*/, "Текст", 1, 2, 3/*Идентификатор фракций, которым выводим сообщение*/);
 
 CMD:fraction(playerid, params[])
 {
